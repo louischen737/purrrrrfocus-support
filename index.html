@@ -138,6 +138,57 @@
             font-size: 2em;
         }
         
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .feature-item {
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.2s;
+        }
+        
+        .feature-item:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+        }
+        
+        .feature-item h4 {
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+        
+        .feature-item p {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .pricing-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .pricing-name {
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .pricing-price {
+            color: #667eea;
+            font-weight: bold;
+        }
+        
         @media (max-width: 600px) {
             .container {
                 padding: 10px;
@@ -149,6 +200,10 @@
             
             .header h1 {
                 font-size: 2em;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -199,11 +254,57 @@
             </div>
             
             <div class="section">
+                <h2>✨ Plus版功能</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <h4>📊 数据导出</h4>
+                        <p>支持CSV/Excel格式导出专注统计数据</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>🎨 自定义主题</h4>
+                        <p>生活雅趣、夏日嬉游、水韵江南等精美主题</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>🔧 自定义任务类型</h4>
+                        <p>创建个性化任务类型，最多20个</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>📈 高级统计</h4>
+                        <p>详细的专注数据分析和趋势图表</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>🔒 专注保护</h4>
+                        <p>学霸模式，防止分心应用干扰</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>🎵 高级音效</h4>
+                        <p>更多背景音乐和提示音选择</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>💰 Plus版价格</h2>
+                <div class="pricing-item">
+                    <span class="pricing-name">月度订阅</span>
+                    <span class="pricing-price">¥8/月</span>
+                </div>
+                <div class="pricing-item">
+                    <span class="pricing-name">年度订阅</span>
+                    <span class="pricing-price">¥48/年</span>
+                </div>
+                <div class="pricing-item">
+                    <span class="pricing-name">终身会员</span>
+                    <span class="pricing-price">¥98（一次性）</span>
+                </div>
+            </div>
+            
+            <div class="section">
                 <h2>❓ 常见问题</h2>
                 
                 <div class="faq-item">
                     <div class="faq-question">Q: 如何购买Plus版本？</div>
-                    <div class="faq-answer">A: 在应用内点击"升级Plus"按钮，选择月度订阅、年度订阅或终身会员，按照提示完成购买即可。</div>
+                    <div class="faq-answer">A: 在应用内点击"升级Plus"按钮，选择月度订阅（¥8/月）、年度订阅（¥48/年）或终身会员（¥98），按照提示完成购买即可。</div>
                 </div>
                 
                 <div class="faq-item">
@@ -225,6 +326,21 @@
                     <div class="faq-question">Q: 支持哪些设备？</div>
                     <div class="faq-answer">A: 支持iPhone和iPad，需要iOS 15.0或更高版本。</div>
                 </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q: 如何创建自定义任务类型？</div>
+                    <div class="faq-answer">A: Plus用户可以在任务设置页面创建自定义任务类型，最多支持20个自定义类型。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q: 专注保护功能如何使用？</div>
+                    <div class="faq-answer">A: Plus用户可以在设置中启用"专注保护"功能，在专注期间防止切换到其他应用。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q: 如何切换主题？</div>
+                    <div class="faq-answer">A: Plus用户可以在设置页面的"主题选择"中选择不同的主题，包括生活雅趣、夏日嬉游、水韵江南等。</div>
+                </div>
             </div>
             
             <div class="section">
@@ -232,11 +348,14 @@
                 <div class="faq-item">
                     <div class="faq-question">版本信息</div>
                     <div class="faq-answer">
+                        <strong>应用名称：</strong>PurrrrrFocus（倾时）<br>
                         <strong>当前版本：</strong>1.0.0<br>
+                        <strong>构建版本：</strong>1<br>
                         <strong>最低系统要求：</strong>iOS 15.0<br>
                         <strong>支持设备：</strong>iPhone, iPad<br>
                         <strong>应用大小：</strong>约50MB<br>
-                        <strong>语言支持：</strong>中文、英文
+                        <strong>语言支持：</strong>中文、英文<br>
+                        <strong>Bundle ID：</strong>com.PurrrrrFocus.iOS
                     </div>
                 </div>
             </div>
