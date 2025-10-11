@@ -128,14 +128,22 @@
         .app-icon {
             width: 80px;
             height: 80px;
-            background: #667eea;
-            border-radius: 20px;
             margin: 0 auto 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 2em;
+        }
+        
+        .app-icon img {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+        
+        .app-icon img:hover {
+            transform: scale(1.05);
         }
         
         .language-switcher {
@@ -234,7 +242,9 @@
 <body>
     <div class="container">
         <div class="header">
-            <div class="app-icon">🐱</div>
+            <div class="app-icon">
+                <img src="AppIcon.png" alt="PurrrrrFocus">
+            </div>
             <h1>PurrrrrFocus</h1>
             <p>专注计时，提升效率</p>
         </div>
@@ -299,14 +309,6 @@
                     <div class="feature-item">
                         <h4>🔒 专注保护</h4>
                         <p>学霸模式，监控应用切换并扣除积分，提升专注质量</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>📚 无限历史记录</h4>
-                        <p>保存所有专注数据，无时间限制</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>⭐ 优先支持</h4>
-                        <p>获得优先技术支持服务</p>
                     </div>
                 </div>
             </div>
