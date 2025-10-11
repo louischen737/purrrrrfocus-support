@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PurrrrrFocus - 技术支持</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: transform 0.2s;
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: #667eea;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: white;
+            font-size: 1.2em;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 5px;
+            color: #333;
+        }
+        
+        .contact-info p {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .faq-answer {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: white;
+            opacity: 0.8;
+        }
+        
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            background: #667eea;
+            border-radius: 20px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2em;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="app-icon">🐱</div>
+            <h1>PurrrrrFocus</h1>
+            <p>专注计时，提升效率</p>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2>📞 联系我们</h2>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-info">
+                        <h3>官方邮箱</h3>
+                        <p>purrrrrfocus@outlook.com</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">💬</div>
+                    <div class="contact-info">
+                        <h3>微信客服</h3>
+                        <p>Lu1-2013（添加时备注"喵时计"）</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div class="contact-info">
+                        <h3>小红书</h3>
+                        <p>3432815257</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">🎵</div>
+                    <div class="contact-info">
+                        <h3>抖音</h3>
+                        <p>PurrrrrFocus</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>❓ 常见问题</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q: 如何购买Plus版本？</div>
+                    <div class="faq-answer">A: 在应用内点击"升级Plus"按钮，选择月度订阅、年度订阅或终身会员，按照提示完成购买即可。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q: 如何恢复购买？</div>
+                    <div class="faq-answer">A: 在设置页面找到"恢复购买"选项，点击后系统会自动验证您的购买记录并恢复Plus功能。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q: 数据会丢失吗？</div>
+                    <div class="faq-answer">A: 不会。所有数据都保存在您的设备本地，除非您主动删除应用或重置数据，否则数据不会丢失。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q: 如何导出数据？</div>
+                    <div class="faq-answer">A: Plus用户可以在设置页面的"数据导出"功能中，选择CSV或Excel格式导出您的专注统计数据。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q: 支持哪些设备？</div>
+                    <div class="faq-answer">A: 支持iPhone和iPad，需要iOS 15.0或更高版本。</div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>📋 应用信息</h2>
+                <div class="faq-item">
+                    <div class="faq-question">版本信息</div>
+                    <div class="faq-answer">
+                        <strong>当前版本：</strong>1.0.0<br>
+                        <strong>最低系统要求：</strong>iOS 15.0<br>
+                        <strong>支持设备：</strong>iPhone, iPad<br>
+                        <strong>应用大小：</strong>约50MB<br>
+                        <strong>语言支持：</strong>中文、英文
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>🔗 相关链接</h2>
+                <div class="faq-item">
+                    <div class="faq-question">重要文档</div>
+                    <div class="faq-answer">
+                        <a href="https://y24nq6bqd7.feishu.cn/docx/JeIGdPW35oZ0rGx2nSDc0j2Mnag" target="_blank">隐私政策</a> | 
+                        <a href="https://y24nq6bqd7.feishu.cn/docx/BQbbdoaiRoazaMxZpqKcsspYnBc" target="_blank">使用条款</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>&copy; 2025 PurrrrrFocus. All rights reserved.</p>
+            <p>让专注成为一种习惯 🐱</p>
+        </div>
+    </div>
+</body>
+</html>
