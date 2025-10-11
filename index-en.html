@@ -128,14 +128,22 @@
         .app-icon {
             width: 80px;
             height: 80px;
-            background: #667eea;
-            border-radius: 20px;
             margin: 0 auto 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 2em;
+        }
+        
+        .app-icon img {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+        
+        .app-icon img:hover {
+            transform: scale(1.05);
         }
         
         .feature-grid {
@@ -234,7 +242,9 @@
 <body>
     <div class="container">
         <div class="header">
-            <div class="app-icon">🐱</div>
+            <div class="app-icon">
+                <img src="AppIcon.png" alt="PurrrrrFocus">
+            </div>
             <h1>PurrrrrFocus</h1>
             <p>Focus Timer, Boost Productivity</p>
         </div>
@@ -289,10 +299,6 @@
                         <p>Export focus statistics in CSV/Excel format</p>
                     </div>
                     <div class="feature-item">
-                        <h4>📚 Unlimited History</h4>
-                        <p>Save all focus data without time limits</p>
-                    </div>
-                    <div class="feature-item">
                         <h4>🔧 Custom Task Types</h4>
                         <p>Create personalized task types, up to 20 custom types</p>
                     </div>
@@ -302,11 +308,7 @@
                     </div>
                     <div class="feature-item">
                         <h4>🔒 Focus Protection</h4>
-                        <p>Scholar Mode monitors app switching and deducts points to improve focus quality</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>⭐ Priority Support</h4>
-                        <p>Get priority technical support service</p>
+                        <p>Elite Focus Mode monitors app switching and deducts points to improve focus quality</p>
                     </div>
                 </div>
             </div>
@@ -358,6 +360,11 @@
                 <div class="faq-item">
                     <div class="faq-question">Q: How to create custom task types?</div>
                     <div class="faq-answer">A: Plus users can create custom task types in Task Settings page, supporting up to 20 custom types.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q: How to enable Elite Focus Mode?</div>
+                    <div class="faq-answer">A: Plus users can enable "Elite Focus Mode" in Settings. The system monitors app switching behavior and deducts points based on switch duration (short switches deduct 5 points, medium switches deduct 10 points, long switches deduct 20 points) to encourage focus.</div>
                 </div>
                 
                 <div class="faq-item">
