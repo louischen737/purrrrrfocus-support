@@ -70,6 +70,18 @@
     </script>
     
     <style>
+        :root {
+            /* Classical Courtyard Theme Colors */
+            --bg-primary: #F9F3E6;
+            --bg-card: #FFFFFF;
+            --text-primary: #3B241D;
+            --text-secondary: #835E1E;
+            --accent: #BD001D;
+            --border: #DEBA86;
+            --shadow: rgba(59, 36, 29, 0.1);
+            --shadow-hover: rgba(59, 36, 29, 0.15);
+        }
+        
         * {
             margin: 0;
             padding: 0;
@@ -79,9 +91,16 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--text-primary);
+            background: var(--bg-primary);
             min-height: 100vh;
+            padding: 20px 0;
+            animation: fadeIn 0.6s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         
         .container {
@@ -92,75 +111,139 @@
         
         .header {
             text-align: center;
-            color: white;
+            color: var(--text-primary);
             margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .cat-decoration {
+            font-size: 2em;
+            margin-bottom: 10px;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
         }
         
         .header h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
             font-weight: 300;
+            color: var(--text-primary);
         }
         
         .header p {
             font-size: 1.2em;
-            opacity: 0.9;
+            color: var(--text-secondary);
         }
         
         .content {
-            background: white;
-            border-radius: 15px;
+            background: var(--bg-card);
+            border-radius: 20px;
             padding: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 24px var(--shadow);
+            transition: box-shadow 0.3s ease;
+            animation: slideUp 0.6s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .content:hover {
+            box-shadow: 0 12px 32px var(--shadow-hover);
         }
         
         .section {
-            margin-bottom: 30px;
+            margin-bottom: 40px;
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+        
+        .section:nth-child(1) { animation-delay: 0.1s; }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.3s; }
+        .section:nth-child(4) { animation-delay: 0.4s; }
+        .section:nth-child(5) { animation-delay: 0.5s; }
+        .section:nth-child(6) { animation-delay: 0.6s; }
+        .section:nth-child(7) { animation-delay: 0.7s; }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         .section h2 {
-            color: #667eea;
-            margin-bottom: 15px;
+            color: var(--accent);
+            margin-bottom: 20px;
             font-size: 1.5em;
-            border-bottom: 2px solid #f0f0f0;
-            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         
         .contact-item {
             display: flex;
             align-items: center;
             margin-bottom: 15px;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            transition: transform 0.2s;
+            padding: 18px;
+            background: #F9F3E6;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            cursor: pointer;
         }
         
         .contact-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px var(--shadow);
+            border-color: var(--accent);
         }
         
         .contact-icon {
-            width: 40px;
-            height: 40px;
-            background: #667eea;
+            width: 48px;
+            height: 48px;
+            background: var(--accent);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-right: 15px;
             color: white;
-            font-size: 1.2em;
+            font-size: 1.3em;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-item:hover .contact-icon {
+            transform: scale(1.1) rotate(5deg);
         }
         
         .contact-info h3 {
             margin-bottom: 5px;
-            color: #333;
+            color: var(--text-primary);
+            font-weight: 600;
         }
         
         .contact-info p {
-            color: #666;
+            color: var(--text-secondary);
             font-size: 0.9em;
             -webkit-touch-callout: none;
             -webkit-user-select: none;
@@ -173,122 +256,198 @@
         .faq-item {
             margin-bottom: 20px;
             padding: 20px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            border-left: 4px solid #667eea;
+            background: #F9F3E6;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent);
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px var(--shadow);
         }
         
         .faq-question {
             font-weight: bold;
             margin-bottom: 10px;
-            color: #333;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .faq-question::before {
+            content: "🐱";
+            font-size: 1.2em;
         }
         
         .faq-answer {
-            color: #666;
-            line-height: 1.6;
+            color: var(--text-secondary);
+            line-height: 1.8;
         }
         
         .footer {
             text-align: center;
-            margin-top: 40px;
-            color: white;
-            opacity: 0.8;
+            margin-top: 50px;
+            color: var(--text-secondary);
+            padding: 20px 0;
         }
         
         .app-icon {
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
             margin: 0 auto 20px;
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
         }
         
         .app-icon img {
-            width: 80px;
-            height: 80px;
-            border-radius: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            transition: transform 0.3s ease;
+            width: 100px;
+            height: 100px;
+            border-radius: 22px;
+            box-shadow: 0 8px 20px var(--shadow);
+            transition: all 0.3s ease;
         }
         
         .app-icon img:hover {
-            transform: scale(1.05);
+            transform: scale(1.08) rotate(2deg);
+            box-shadow: 0 12px 28px var(--shadow-hover);
+        }
+        
+        .app-store-badge {
+            text-align: center;
+            margin: 25px 0 30px 0;
+        }
+        
+        .app-store-badge a {
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .app-store-badge img {
+            height: 60px;
+            width: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px var(--shadow);
+            transition: all 0.3s ease;
+            display: block;
+        }
+        
+        .app-store-badge a:hover img {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 20px var(--shadow-hover);
+        }
+        
+        .app-store-badge a:active img {
+            transform: translateY(-1px) scale(1.02);
+        }
+        
+        .language-switcher {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .language-switcher a {
+            color: var(--text-primary);
+            text-decoration: none;
+            padding: 10px 20px;
+            background: var(--bg-card);
+            border-radius: 25px;
+            margin: 0 8px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--border);
+            display: inline-block;
+            font-weight: 500;
+        }
+        
+        .language-switcher a:hover {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+        
+        .language-switcher a.active {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
         }
         
         .feature-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
+            gap: 20px;
+            margin-top: 20px;
         }
         
         .feature-item {
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 10px;
+            padding: 20px;
+            background: #F9F3E6;
+            border-radius: 12px;
             text-align: center;
-            border: 2px solid transparent;
-            transition: all 0.2s;
+            border: 2px solid var(--border);
+            transition: all 0.3s ease;
         }
         
         .feature-item:hover {
-            border-color: #667eea;
-            transform: translateY(-2px);
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px var(--shadow);
         }
         
         .feature-item h4 {
-            color: #667eea;
-            margin-bottom: 5px;
+            color: var(--accent);
+            margin-bottom: 8px;
+            font-size: 1.1em;
         }
         
         .feature-item p {
-            color: #666;
+            color: var(--text-secondary);
             font-size: 0.9em;
+            line-height: 1.6;
         }
         
         .pricing-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            margin-bottom: 10px;
+            padding: 18px;
+            background: #F9F3E6;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-item:hover {
+            transform: translateX(5px);
+            border-color: var(--accent);
+            box-shadow: 0 4px 12px var(--shadow);
         }
         
         .pricing-name {
-            font-weight: bold;
-            color: #333;
+            font-weight: 600;
+            color: var(--text-primary);
         }
         
         .pricing-price {
-            color: #667eea;
+            color: var(--accent);
             font-weight: bold;
+            font-size: 1.1em;
         }
         
-        .language-switcher {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        
-        .language-switcher a {
-            color: white;
+        .section a {
+            color: var(--accent);
             text-decoration: none;
-            padding: 8px 16px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 20px;
-            margin: 0 5px;
-            transition: background 0.2s;
+            transition: color 0.3s ease;
         }
         
-        .language-switcher a:hover {
-            background: rgba(255,255,255,0.3);
-        }
-        
-        .language-switcher a.active {
-            background: rgba(255,255,255,0.4);
+        .section a:hover {
+            color: var(--text-secondary);
+            text-decoration: underline;
         }
         
         @media (max-width: 600px) {
@@ -297,7 +456,8 @@
             }
             
             .content {
-                padding: 20px;
+                padding: 25px;
+                border-radius: 15px;
             }
             
             .header h1 {
@@ -306,6 +466,25 @@
             
             .feature-grid {
                 grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .section {
+                margin-bottom: 30px;
+            }
+            
+            .contact-item {
+                padding: 15px;
+            }
+            
+            .language-switcher a {
+                padding: 8px 16px;
+                font-size: 0.9em;
+            }
+            
+            .app-store-badge img {
+                height: 50px;
+                width: auto;
             }
         }
     </style>
@@ -313,11 +492,18 @@
 <body>
     <div class="container">
         <div class="header">
+            <div class="cat-decoration">🐱</div>
             <div class="app-icon">
                 <img src="AppIcon-Preview.png" alt="PurrrrrFocus">
             </div>
             <h1>PurrrrrFocus</h1>
             <p>Focus Timer, Boost Productivity</p>
+            
+            <div class="app-store-badge">
+                <a href="https://apps.apple.com/app/purrrrrfocus/id6753966008" target="_blank" rel="noopener noreferrer">
+                    <img src="app-store-badge-en.svg" alt="Download on the App Store">
+                </a>
+            </div>
         </div>
         
         <div class="language-switcher">
