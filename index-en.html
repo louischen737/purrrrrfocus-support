@@ -375,26 +375,28 @@
         
         .cat-avatar {
             width: 100%;
-            max-width: 500px;
+            max-width: 350px;
             height: auto;
-            border-radius: 16px;
-            margin: 20px auto;
+            border-radius: 12px;
             display: block;
-            box-shadow: 0 4px 16px var(--shadow);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .cat-avatar:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 24px var(--shadow-hover);
         }
         
         .cat-avatar-features {
-            margin: 20px auto 30px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            max-width: 280px;
+            opacity: 0.9;
+        }
+        
+        .section.features-section {
+            position: relative;
+            padding-bottom: 20px;
         }
         
         .cat-avatar-footer {
             margin: 40px auto 30px;
+            max-width: 300px;
         }
         
         .footer {
@@ -600,15 +602,22 @@
             
             .cat-avatar {
                 max-width: 100%;
-                margin: 15px auto;
             }
             
             .cat-avatar-features {
+                position: relative;
+                max-width: 200px;
                 margin: 15px auto 20px;
+                opacity: 1;
             }
             
             .cat-avatar-footer {
                 margin: 30px auto 20px;
+                max-width: 250px;
+            }
+            
+            .section.features-section {
+                position: relative;
             }
         }
     </style>
@@ -687,7 +696,7 @@
                 </div>
             </div>
             
-            <div class="section">
+            <div class="section features-section">
                 <h2>✨ Plus Features</h2>
                 <img src="cat-avatar-plus-features.png" alt="Plus Features Decoration" class="cat-avatar cat-avatar-features">
                 <div class="feature-grid">
@@ -797,6 +806,11 @@
         </div>
         
         <div class="footer">
+            <div class="app-store-badge">
+                <a href="https://apps.apple.com/app/purrrrrfocus/id6753966008" target="_blank" rel="noopener noreferrer">
+                    <img src="app-store-badge-en.svg" alt="Download on the App Store">
+                </a>
+            </div>
             <p>&copy; 2025 PurrrrrFocus. All rights reserved.</p>
             <p>Make focus a habit 🐱</p>
         </div>
