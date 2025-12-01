@@ -238,15 +238,32 @@
             object-fit: contain;
         }
         
-        /* 邮箱使用系统图标（emoji） */
+        /* Email uses system icon (emoji) */
         .contact-icon.email {
             font-size: 1.5em;
-            background: var(--accent);
-            color: white;
+            background: var(--bg-card);
+            color: var(--text-primary);
             padding: 0;
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+        
+        /* Social media icon colors - using Simple Icons standard colors */
+        .contact-icon.wechat-icon img {
+            filter: brightness(0) saturate(100%) invert(48%) sepia(95%) saturate(2000%) hue-rotate(120deg) brightness(0.95) contrast(1.1);
+        }
+        
+        .contact-icon.xiaohongshu-icon img {
+            filter: brightness(0) saturate(100%) invert(20%) sepia(100%) saturate(5000%) hue-rotate(340deg) brightness(1) contrast(1);
+        }
+        
+        .contact-icon.douyin-icon img {
+            filter: brightness(0);
+        }
+        
+        .contact-icon.instagram-icon img {
+            filter: brightness(0) saturate(100%) invert(25%) sepia(95%) saturate(3000%) hue-rotate(320deg) brightness(0.95) contrast(1.1);
         }
         
         .contact-item:hover .contact-icon {
@@ -333,6 +350,27 @@
         .faq-item.active .faq-answer {
             max-height: 500px;
             padding: 0 20px 18px 20px;
+        }
+        
+        .info-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #F9F3E6;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent);
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+        
+        .info-item a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .info-item a:hover {
+            color: var(--text-primary);
+            text-decoration: underline;
         }
         
         .footer {
@@ -572,7 +610,7 @@
                 </div>
                 
                 <div class="contact-item">
-                    <div class="contact-icon">
+                    <div class="contact-icon wechat-icon">
                         <img src="icons/wechat.svg" alt="WeChat">
                     </div>
                     <div class="contact-info">
@@ -582,7 +620,7 @@
                 </div>
                 
                 <div class="contact-item">
-                    <div class="contact-icon">
+                    <div class="contact-icon xiaohongshu-icon">
                         <img src="icons/xiaohongshu.svg" alt="Xiaohongshu">
                     </div>
                     <div class="contact-info">
@@ -592,7 +630,7 @@
                 </div>
                 
                 <div class="contact-item">
-                    <div class="contact-icon">
+                    <div class="contact-icon douyin-icon">
                         <img src="icons/douyin.svg" alt="Douyin">
                     </div>
                     <div class="contact-info">
@@ -602,7 +640,7 @@
                 </div>
                 
                 <div class="contact-item">
-                    <div class="contact-icon">
+                    <div class="contact-icon instagram-icon">
                         <img src="icons/instagram.svg" alt="Instagram">
                     </div>
                     <div class="contact-info">
@@ -670,7 +708,7 @@
                 
                 <div class="faq-item">
                     <div class="faq-question">Q: How to export data?</div>
-                    <div class="faq-answer">A: Plus users can go to Settings page and use "Data Export" feature to export focus statistics in CSV or Excel format.</div>
+                    <div class="faq-answer">A: Plus users can tap the export data icon in the top-left corner of the Statistics page to export focus statistics in CSV or Excel format.</div>
                 </div>
                 
                 <div class="faq-item">
@@ -696,31 +734,25 @@
             
             <div class="section">
                 <h2>📋 App Information</h2>
-                <div class="faq-item">
-                    <div class="faq-question">Version Information</div>
-                    <div class="faq-answer">
-                        <strong>App Name:</strong> PurrrrrFocus<br>
-                        <strong>Current Version:</strong> 1.0.0<br>
-                        <strong>Minimum System Requirement:</strong> iOS 15.0<br>
-                        <strong>Supported Devices:</strong> iPhone, iPad<br>
-                        <strong>App Size:</strong> ~50MB<br>
-                        <strong>Language Support:</strong> Chinese, English
-                    </div>
+                <div class="info-item">
+                    <strong>App Name:</strong> PurrrrrFocus<br>
+                    <strong>Current Version:</strong> 1.0.0<br>
+                    <strong>Minimum System Requirement:</strong> iOS 15.0<br>
+                    <strong>Supported Devices:</strong> iPhone, iPad<br>
+                    <strong>App Size:</strong> ~50MB<br>
+                    <strong>Language Support:</strong> Chinese, English
                 </div>
             </div>
             
             <div class="section">
                 <h2>🔗 Related Links</h2>
-                <div class="faq-item">
-                    <div class="faq-question">Important Documents</div>
-                    <div class="faq-answer">
-                        <strong>English Version:</strong><br>
-                        <a href="https://y24nq6bqd7.feishu.cn/docx/YTeZdXNTuozGLfxCpD2cxMbzn5p" target="_blank">Privacy Policy</a> | 
-                        <a href="https://y24nq6bqd7.feishu.cn/docx/HutadQZMIoNI5yxntRscIFNHndc" target="_blank">Terms of Service</a><br><br>
-                        <strong>中文版本：</strong><br>
-                        <a href="https://y24nq6bqd7.feishu.cn/docx/JeIGdPW35oZ0rGx2nSDc0j2Mnag" target="_blank">隐私政策</a> | 
-                        <a href="https://y24nq6bqd7.feishu.cn/docx/BQbbdoaiRoazaMxZpqKcsspYnBc" target="_blank">使用条款</a>
-                    </div>
+                <div class="info-item">
+                    <strong>English Version:</strong><br>
+                    <a href="https://y24nq6bqd7.feishu.cn/docx/YTeZdXNTuozGLfxCpD2cxMbzn5p" target="_blank">Privacy Policy</a> | 
+                    <a href="https://y24nq6bqd7.feishu.cn/docx/HutadQZMIoNI5yxntRscIFNHndc" target="_blank">Terms of Service</a><br><br>
+                    <strong>中文版本：</strong><br>
+                    <a href="https://y24nq6bqd7.feishu.cn/docx/JeIGdPW35oZ0rGx2nSDc0j2Mnag" target="_blank">隐私政策</a> | 
+                    <a href="https://y24nq6bqd7.feishu.cn/docx/BQbbdoaiRoazaMxZpqKcsspYnBc" target="_blank">使用条款</a>
                 </div>
             </div>
         </div>
