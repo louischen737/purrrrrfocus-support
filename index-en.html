@@ -220,20 +220,39 @@
         .contact-icon {
             width: 48px;
             height: 48px;
-            background: var(--accent);
+            background: var(--bg-card);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-right: 15px;
-            color: white;
-            font-size: 1.3em;
             flex-shrink: 0;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
+            border: 2px solid var(--border);
+            padding: 10px;
+        }
+        
+        .contact-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        /* 邮箱使用系统图标（emoji） */
+        .contact-icon.email {
+            font-size: 1.5em;
+            background: var(--accent);
+            color: white;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .contact-item:hover .contact-icon {
             transform: scale(1.1) rotate(5deg);
+            border-color: var(--accent);
+            box-shadow: 0 4px 12px var(--shadow);
         }
         
         .contact-info h3 {
@@ -254,36 +273,66 @@
         }
         
         .faq-item {
-            margin-bottom: 20px;
-            padding: 20px;
+            margin-bottom: 15px;
             background: #F9F3E6;
             border-radius: 12px;
-            border-left: 4px solid var(--accent);
+            border-left: 4px solid var(--border);
             transition: all 0.3s ease;
+            overflow: hidden;
         }
         
-        .faq-item:hover {
-            transform: translateX(5px);
+        .faq-item.active {
+            border-left-color: var(--accent);
             box-shadow: 0 4px 12px var(--shadow);
         }
         
         .faq-question {
-            font-weight: bold;
-            margin-bottom: 10px;
+            font-weight: 600;
+            padding: 18px 20px;
             color: var(--text-primary);
             display: flex;
             align-items: center;
-            gap: 8px;
+            justify-content: space-between;
+            cursor: pointer;
+            user-select: none;
+            transition: color 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            color: var(--accent);
         }
         
         .faq-question::before {
             content: "🐱";
             font-size: 1.2em;
+            margin-right: 10px;
+        }
+        
+        .faq-question::after {
+            content: "▼";
+            font-size: 0.8em;
+            color: var(--text-secondary);
+            transition: transform 0.3s ease;
+            margin-left: 10px;
+        }
+        
+        .faq-item.active .faq-question::after {
+            transform: rotate(180deg);
+            color: var(--accent);
         }
         
         .faq-answer {
             color: var(--text-secondary);
             line-height: 1.8;
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 20px 18px 20px;
         }
         
         .footer {
@@ -515,7 +564,7 @@
                 <h2>📞 Contact Us</h2>
                 
                 <div class="contact-item">
-                    <div class="contact-icon">📧</div>
+                    <div class="contact-icon email">📧</div>
                     <div class="contact-info">
                         <h3>Official Email</h3>
                         <p>purrrrrfocus@outlook.com</p>
@@ -523,7 +572,9 @@
                 </div>
                 
                 <div class="contact-item">
-                    <div class="contact-icon">💬</div>
+                    <div class="contact-icon">
+                        <img src="icons/wechat.svg" alt="WeChat">
+                    </div>
                     <div class="contact-info">
                         <h3>WeChat Support</h3>
                         <p>Lu1-2013 (Please add note "PurrrrrFocus" when adding)</p>
@@ -531,7 +582,9 @@
                 </div>
                 
                 <div class="contact-item">
-                    <div class="contact-icon">📱</div>
+                    <div class="contact-icon">
+                        <img src="icons/xiaohongshu.svg" alt="Xiaohongshu">
+                    </div>
                     <div class="contact-info">
                         <h3>Xiaohongshu</h3>
                         <p>3432815257</p>
@@ -539,7 +592,9 @@
                 </div>
                 
                 <div class="contact-item">
-                    <div class="contact-icon">🎵</div>
+                    <div class="contact-icon">
+                        <img src="icons/douyin.svg" alt="Douyin">
+                    </div>
                     <div class="contact-info">
                         <h3>Douyin</h3>
                         <p>PurrrrrFocus</p>
@@ -547,7 +602,9 @@
                 </div>
                 
                 <div class="contact-item">
-                    <div class="contact-icon">📷</div>
+                    <div class="contact-icon">
+                        <img src="icons/instagram.svg" alt="Instagram">
+                    </div>
                     <div class="contact-info">
                         <h3>Instagram</h3>
                         <p>purrrrrfocus</p>
@@ -673,5 +730,35 @@
             <p>Make focus a habit 🐱</p>
         </div>
     </div>
+    
+    <script>
+        // FAQ Collapsible Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', function() {
+                    // Toggle current item's active state
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close all other FAQ items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    if (isActive) {
+                        item.classList.remove('active');
+                    } else {
+                        item.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
