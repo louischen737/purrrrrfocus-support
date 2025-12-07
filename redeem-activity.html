@@ -70,15 +70,27 @@
             position: relative;
         }
         
-        .cat-decoration {
-            font-size: 2em;
-            margin-bottom: 10px;
-            animation: float 3s ease-in-out infinite;
+        .app-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
         }
         
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+        .app-icon img {
+            width: 100px;
+            height: 100px;
+            border-radius: 22px;
+            box-shadow: 0 8px 20px var(--shadow);
+            transition: all 0.3s ease;
+        }
+        
+        .app-icon img:hover {
+            transform: scale(1.08) rotate(2deg);
+            box-shadow: 0 12px 28px var(--shadow-hover);
         }
         
         .header h1 {
@@ -310,6 +322,19 @@
             box-shadow: 0 4px 12px var(--shadow);
         }
         
+        .cat-avatar {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            border-radius: 12px;
+            display: block;
+        }
+        
+        .cat-avatar-footer {
+            margin: 40px auto 30px;
+            max-width: 300px;
+        }
+        
         .footer {
             text-align: center;
             margin-top: 50px;
@@ -334,14 +359,21 @@
             .section {
                 margin-bottom: 30px;
             }
+            
+            .cat-avatar-footer {
+                margin: 30px auto 20px;
+                max-width: 250px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <div class="cat-decoration">🐱</div>
-            <h1>兑换码活动</h1>
+            <div class="app-icon">
+                <img src="AppIcon-Preview.png" alt="PurrrrrFocus">
+            </div>
+            <h1>喵时计 - 兑换码活动</h1>
             <p>分享专注体验，获得Plus会员兑换码</p>
         </div>
         
@@ -390,7 +422,7 @@
                     <h3>3. 添加标签</h3>
                     <p>发布时带上指定标签：<br>
                     <strong id="hashtags">#PurrrrrFocus#喵时计app#宝藏app#番茄钟#专注计时器#学霸必备#中式美学</strong>
-                    <button class="copy-button" onclick="copyToClipboard('hashtags')">复制标签</button>
+                    <button class="copy-button" onclick="copyToClipboard('hashtags', this)">复制标签</button>
                     </p>
                 </div>
                 
@@ -398,7 +430,7 @@
                     <h3>4. 提交申请</h3>
                     <p>达到兑换条件后请将以下信息发送到我们的邮箱：<br>
                     <strong id="email">purrrrrfocus@outlook.com</strong>
-                    <button class="copy-button" onclick="copyToClipboard('email')">复制邮箱</button>
+                    <button class="copy-button" onclick="copyToClipboard('email', this)">复制邮箱</button>
                     </p>
                     <ul>
                         <li>可公开访问的内容链接</li>
@@ -472,6 +504,8 @@
                     <li>如有疑问，请联系客服支持：purrrrrfocus@outlook.com</li>
                 </ul>
             </div>
+            
+            <img src="cat-avatar-header.png" alt="页面装饰" class="cat-avatar cat-avatar-footer">
         </div>
         
         <div class="footer">
@@ -481,24 +515,79 @@
     </div>
     
     <script>
-        function copyToClipboard(elementId) {
+        function copyToClipboard(elementId, button) {
             const element = document.getElementById(elementId);
-            const text = element.textContent || element.innerText;
+            if (!element) {
+                alert('元素不存在');
+                return;
+            }
             
-            navigator.clipboard.writeText(text).then(function() {
-                const button = event.target;
-                const originalText = button.textContent;
-                button.textContent = '已复制！';
-                button.style.background = '#4CAF50';
-                
-                setTimeout(function() {
-                    button.textContent = originalText;
-                    button.style.background = '';
-                }, 2000);
-            }).catch(function(err) {
+            const text = element.textContent || element.innerText;
+            const originalText = button.textContent;
+            
+            // 优先使用现代 Clipboard API
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(function() {
+                    button.textContent = '已复制！';
+                    button.style.background = '#4CAF50';
+                    
+                    setTimeout(function() {
+                        button.textContent = originalText;
+                        button.style.background = '';
+                    }, 2000);
+                }).catch(function(err) {
+                    console.error('Clipboard API 失败:', err);
+                    // 降级到传统方法
+                    fallbackCopyTextToClipboard(text, button, originalText);
+                });
+            } else {
+                // 降级到传统方法
+                fallbackCopyTextToClipboard(text, button, originalText);
+            }
+        }
+        
+        function fallbackCopyTextToClipboard(text, button, originalText) {
+            // 创建临时文本区域
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.position = "fixed";
+            textArea.style.left = "-999999px";
+            textArea.style.top = "-999999px";
+            textArea.style.opacity = "0";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            let textAreaRemoved = false;
+            
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    button.textContent = '已复制！';
+                    button.style.background = '#4CAF50';
+                    
+                    setTimeout(function() {
+                        button.textContent = originalText;
+                        button.style.background = '';
+                    }, 2000);
+                } else {
+                    throw new Error('execCommand 失败');
+                }
+            } catch (err) {
                 console.error('复制失败:', err);
-                alert('复制失败，请手动复制');
-            });
+                // 最后的选择：显示文本让用户手动复制
+                alert('复制失败，请手动复制以下内容：\n\n' + text);
+            } finally {
+                // 安全移除 textArea
+                if (!textAreaRemoved && textArea.parentNode) {
+                    try {
+                        document.body.removeChild(textArea);
+                        textAreaRemoved = true;
+                    } catch (e) {
+                        console.error('移除 textArea 失败:', e);
+                    }
+                }
+            }
         }
     </script>
 </body>
