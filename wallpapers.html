@@ -436,17 +436,70 @@
             <div class="category-section">
                 <h2 class="category-title"><span style="font-size: 1.2em; margin-right: 8px;">🎄</span>圣诞节主题</h2>
                 <div class="wallpaper-grid">
-                    <!-- 壁纸项可以在这里添加 -->
-                    <!-- 示例格式（直接使用完整壁纸，无需缩略图）：
-                    <div class="wallpaper-item" data-full="wallpapers/christmas/christmas_001.jpg">
-                        <img src="wallpapers/christmas/christmas_001.jpg" alt="圣诞节壁纸 1" loading="lazy">
-                        <button class="download-btn" onclick="downloadWallpaper(event, 'wallpapers/christmas/christmas_001.jpg', '圣诞节壁纸_1')">下载</button>
+                    <div class="wallpaper-item" data-full="wallpapers/christmas/christmas_001.png">
+                        <img src="wallpapers/christmas/christmas_001.png" alt="圣诞节壁纸 1" loading="lazy">
+                        <button class="download-btn" onclick="downloadWallpaper(event, 'wallpapers/christmas/christmas_001.png', '圣诞节壁纸_1')">下载</button>
                         <div class="wallpaper-overlay">
-                            <div class="wallpaper-name">壁纸名称</div>
+                            <div class="wallpaper-name">圣诞节壁纸 1</div>
                             <div class="wallpaper-info">1080×1920</div>
                         </div>
                     </div>
-                    -->
+                    <div class="wallpaper-item" data-full="wallpapers/christmas/christmas_002.png">
+                        <img src="wallpapers/christmas/christmas_002.png" alt="圣诞节壁纸 2" loading="lazy">
+                        <button class="download-btn" onclick="downloadWallpaper(event, 'wallpapers/christmas/christmas_002.png', '圣诞节壁纸_2')">下载</button>
+                        <div class="wallpaper-overlay">
+                            <div class="wallpaper-name">圣诞节壁纸 2</div>
+                            <div class="wallpaper-info">1080×1920</div>
+                        </div>
+                    </div>
+                    <div class="wallpaper-item" data-full="wallpapers/christmas/christmas_003.png">
+                        <img src="wallpapers/christmas/christmas_003.png" alt="圣诞节壁纸 3" loading="lazy">
+                        <button class="download-btn" onclick="downloadWallpaper(event, 'wallpapers/christmas/christmas_003.png', '圣诞节壁纸_3')">下载</button>
+                        <div class="wallpaper-overlay">
+                            <div class="wallpaper-name">圣诞节壁纸 3</div>
+                            <div class="wallpaper-info">1080×1920</div>
+                        </div>
+                    </div>
+                    <div class="wallpaper-item" data-full="wallpapers/christmas/christmas_004.png">
+                        <img src="wallpapers/christmas/christmas_004.png" alt="圣诞节壁纸 4" loading="lazy">
+                        <button class="download-btn" onclick="downloadWallpaper(event, 'wallpapers/christmas/christmas_004.png', '圣诞节壁纸_4')">下载</button>
+                        <div class="wallpaper-overlay">
+                            <div class="wallpaper-name">圣诞节壁纸 4</div>
+                            <div class="wallpaper-info">1080×1920</div>
+                        </div>
+                    </div>
+                    <div class="wallpaper-item" data-full="wallpapers/christmas/christmas_005.png">
+                        <img src="wallpapers/christmas/christmas_005.png" alt="圣诞节壁纸 5" loading="lazy">
+                        <button class="download-btn" onclick="downloadWallpaper(event, 'wallpapers/christmas/christmas_005.png', '圣诞节壁纸_5')">下载</button>
+                        <div class="wallpaper-overlay">
+                            <div class="wallpaper-name">圣诞节壁纸 5</div>
+                            <div class="wallpaper-info">1080×1920</div>
+                        </div>
+                    </div>
+                    <div class="wallpaper-item" data-full="wallpapers/christmas/christmas_006.png">
+                        <img src="wallpapers/christmas/christmas_006.png" alt="圣诞节壁纸 6" loading="lazy">
+                        <button class="download-btn" onclick="downloadWallpaper(event, 'wallpapers/christmas/christmas_006.png', '圣诞节壁纸_6')">下载</button>
+                        <div class="wallpaper-overlay">
+                            <div class="wallpaper-name">圣诞节壁纸 6</div>
+                            <div class="wallpaper-info">1080×1920</div>
+                        </div>
+                    </div>
+                    <div class="wallpaper-item" data-full="wallpapers/christmas/christmas_007.png">
+                        <img src="wallpapers/christmas/christmas_007.png" alt="圣诞节壁纸 7" loading="lazy">
+                        <button class="download-btn" onclick="downloadWallpaper(event, 'wallpapers/christmas/christmas_007.png', '圣诞节壁纸_7')">下载</button>
+                        <div class="wallpaper-overlay">
+                            <div class="wallpaper-name">圣诞节壁纸 7</div>
+                            <div class="wallpaper-info">1080×1920</div>
+                        </div>
+                    </div>
+                    <div class="wallpaper-item" data-full="wallpapers/christmas/christmas_008.png">
+                        <img src="wallpapers/christmas/christmas_008.png" alt="圣诞节壁纸 8" loading="lazy">
+                        <button class="download-btn" onclick="downloadWallpaper(event, 'wallpapers/christmas/christmas_008.png', '圣诞节壁纸_8')">下载</button>
+                        <div class="wallpaper-overlay">
+                            <div class="wallpaper-name">圣诞节壁纸 8</div>
+                            <div class="wallpaper-info">1080×1920</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -530,7 +583,7 @@
             
             const link = document.createElement('a');
             link.href = imageUrl;
-            link.download = imageName + '.jpg';
+            link.download = imageName + '.png';
             link.target = '_blank';
             document.body.appendChild(link);
             link.click();
@@ -542,7 +595,7 @@
             if (currentImageUrl) {
                 const link = document.createElement('a');
                 link.href = currentImageUrl;
-                link.download = currentImageName + '.jpg';
+                link.download = currentImageName + '.png';
                 link.target = '_blank';
                 document.body.appendChild(link);
                 link.click();

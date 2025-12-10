@@ -436,17 +436,70 @@
             <div class="category-section">
                 <h2 class="category-title"><span style="font-size: 1.2em; margin-right: 8px;">🎄</span>Christmas Theme</h2>
                 <div class="wallpaper-grid">
-                    <!-- Wallpaper items can be added here -->
-                    <!-- Example format (use full wallpaper directly, no thumbnail needed):
-                    <div class="wallpaper-item" data-full="wallpapers/christmas/christmas_001.jpg">
-                        <img src="wallpapers/christmas/christmas_001.jpg" alt="Christmas Wallpaper 1" loading="lazy">
-                        <button class="download-btn" onclick="downloadWallpaper(event, 'wallpapers/christmas/christmas_001.jpg', 'Christmas_Wallpaper_1')">Download</button>
+                    <div class="wallpaper-item" data-full="wallpapers/christmas/christmas_001.png">
+                        <img src="wallpapers/christmas/christmas_001.png" alt="Christmas Wallpaper 1" loading="lazy">
+                        <button class="download-btn" onclick="downloadWallpaper(event, 'wallpapers/christmas/christmas_001.png', 'Christmas_Wallpaper_1')">Download</button>
                         <div class="wallpaper-overlay">
-                            <div class="wallpaper-name">Wallpaper Name</div>
+                            <div class="wallpaper-name">Christmas Wallpaper 1</div>
                             <div class="wallpaper-info">1080×1920</div>
                         </div>
                     </div>
-                    -->
+                    <div class="wallpaper-item" data-full="wallpapers/christmas/christmas_002.png">
+                        <img src="wallpapers/christmas/christmas_002.png" alt="Christmas Wallpaper 2" loading="lazy">
+                        <button class="download-btn" onclick="downloadWallpaper(event, 'wallpapers/christmas/christmas_002.png', 'Christmas_Wallpaper_2')">Download</button>
+                        <div class="wallpaper-overlay">
+                            <div class="wallpaper-name">Christmas Wallpaper 2</div>
+                            <div class="wallpaper-info">1080×1920</div>
+                        </div>
+                    </div>
+                    <div class="wallpaper-item" data-full="wallpapers/christmas/christmas_003.png">
+                        <img src="wallpapers/christmas/christmas_003.png" alt="Christmas Wallpaper 3" loading="lazy">
+                        <button class="download-btn" onclick="downloadWallpaper(event, 'wallpapers/christmas/christmas_003.png', 'Christmas_Wallpaper_3')">Download</button>
+                        <div class="wallpaper-overlay">
+                            <div class="wallpaper-name">Christmas Wallpaper 3</div>
+                            <div class="wallpaper-info">1080×1920</div>
+                        </div>
+                    </div>
+                    <div class="wallpaper-item" data-full="wallpapers/christmas/christmas_004.png">
+                        <img src="wallpapers/christmas/christmas_004.png" alt="Christmas Wallpaper 4" loading="lazy">
+                        <button class="download-btn" onclick="downloadWallpaper(event, 'wallpapers/christmas/christmas_004.png', 'Christmas_Wallpaper_4')">Download</button>
+                        <div class="wallpaper-overlay">
+                            <div class="wallpaper-name">Christmas Wallpaper 4</div>
+                            <div class="wallpaper-info">1080×1920</div>
+                        </div>
+                    </div>
+                    <div class="wallpaper-item" data-full="wallpapers/christmas/christmas_005.png">
+                        <img src="wallpapers/christmas/christmas_005.png" alt="Christmas Wallpaper 5" loading="lazy">
+                        <button class="download-btn" onclick="downloadWallpaper(event, 'wallpapers/christmas/christmas_005.png', 'Christmas_Wallpaper_5')">Download</button>
+                        <div class="wallpaper-overlay">
+                            <div class="wallpaper-name">Christmas Wallpaper 5</div>
+                            <div class="wallpaper-info">1080×1920</div>
+                        </div>
+                    </div>
+                    <div class="wallpaper-item" data-full="wallpapers/christmas/christmas_006.png">
+                        <img src="wallpapers/christmas/christmas_006.png" alt="Christmas Wallpaper 6" loading="lazy">
+                        <button class="download-btn" onclick="downloadWallpaper(event, 'wallpapers/christmas/christmas_006.png', 'Christmas_Wallpaper_6')">Download</button>
+                        <div class="wallpaper-overlay">
+                            <div class="wallpaper-name">Christmas Wallpaper 6</div>
+                            <div class="wallpaper-info">1080×1920</div>
+                        </div>
+                    </div>
+                    <div class="wallpaper-item" data-full="wallpapers/christmas/christmas_007.png">
+                        <img src="wallpapers/christmas/christmas_007.png" alt="Christmas Wallpaper 7" loading="lazy">
+                        <button class="download-btn" onclick="downloadWallpaper(event, 'wallpapers/christmas/christmas_007.png', 'Christmas_Wallpaper_7')">Download</button>
+                        <div class="wallpaper-overlay">
+                            <div class="wallpaper-name">Christmas Wallpaper 7</div>
+                            <div class="wallpaper-info">1080×1920</div>
+                        </div>
+                    </div>
+                    <div class="wallpaper-item" data-full="wallpapers/christmas/christmas_008.png">
+                        <img src="wallpapers/christmas/christmas_008.png" alt="Christmas Wallpaper 8" loading="lazy">
+                        <button class="download-btn" onclick="downloadWallpaper(event, 'wallpapers/christmas/christmas_008.png', 'Christmas_Wallpaper_8')">Download</button>
+                        <div class="wallpaper-overlay">
+                            <div class="wallpaper-name">Christmas Wallpaper 8</div>
+                            <div class="wallpaper-info">1080×1920</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -530,7 +583,7 @@
             
             const link = document.createElement('a');
             link.href = imageUrl;
-            link.download = imageName + '.jpg';
+            link.download = imageName + '.png';
             link.target = '_blank';
             document.body.appendChild(link);
             link.click();
@@ -542,7 +595,7 @@
             if (currentImageUrl) {
                 const link = document.createElement('a');
                 link.href = currentImageUrl;
-                link.download = currentImageName + '.jpg';
+                link.download = currentImageName + '.png';
                 link.target = '_blank';
                 document.body.appendChild(link);
                 link.click();
