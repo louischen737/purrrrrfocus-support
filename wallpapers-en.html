@@ -75,6 +75,29 @@
             margin-bottom: 20px;
         }
         
+        .app-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .app-icon img {
+            width: 100px;
+            height: 100px;
+            border-radius: 22px;
+            box-shadow: 0 8px 20px var(--shadow);
+            transition: all 0.3s ease;
+        }
+        
+        .app-icon img:hover {
+            transform: scale(1.08) rotate(2deg);
+            box-shadow: 0 12px 28px var(--shadow-hover);
+        }
+        
         .back-link {
             display: inline-block;
             margin-bottom: 20px;
@@ -345,7 +368,7 @@
         }
         
         /* Responsive Design */
-        @media (max-width: 768px) {
+            @media (max-width: 768px) {
             .container {
                 padding: 10px;
             }
@@ -356,6 +379,16 @@
             
             .header h1 {
                 font-size: 2em;
+            }
+            
+            .app-icon {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .app-icon img {
+                width: 80px;
+                height: 80px;
             }
             
             .wallpaper-grid {
@@ -381,10 +414,11 @@
 </head>
 <body>
     <div class="container">
-        <a href="index-en.html" class="back-link">← Back to Support</a>
-        
         <div class="header">
-            <h1>🎄 Wallpapers</h1>
+            <div class="app-icon">
+                <img src="AppIcon-Preview.png" alt="PurrrrrFocus">
+            </div>
+            <h1>Wallpapers</h1>
             <p>Curated high-quality wallpapers to beautify your device</p>
         </div>
         
@@ -400,12 +434,12 @@
             
             <!-- Christmas Theme Category -->
             <div class="category-section">
-                <h2 class="category-title">🎄 Christmas Theme</h2>
+                <h2 class="category-title"><span style="font-size: 1.2em; margin-right: 8px;">🎄</span>Christmas Theme</h2>
                 <div class="wallpaper-grid">
                     <!-- Wallpaper items can be added here -->
-                    <!-- Example format:
+                    <!-- Example format (use full wallpaper directly, no thumbnail needed):
                     <div class="wallpaper-item" data-full="wallpapers/christmas/christmas_001.jpg">
-                        <img src="wallpapers/christmas/christmas_001_thumb.jpg" alt="Christmas Wallpaper 1" loading="lazy">
+                        <img src="wallpapers/christmas/christmas_001.jpg" alt="Christmas Wallpaper 1" loading="lazy">
                         <button class="download-btn" onclick="downloadWallpaper(event, 'wallpapers/christmas/christmas_001.jpg', 'Christmas_Wallpaper_1')">Download</button>
                         <div class="wallpaper-overlay">
                             <div class="wallpaper-name">Wallpaper Name</div>
@@ -418,12 +452,12 @@
         </div>
         
         <div class="footer">
-            <p>&copy; 2025 PurrrrrFocus. All rights reserved.</p>
-            <p>Make focus a habit 🐱</p>
-            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--text-secondary); font-size: 0.9em; line-height: 1.6;">
+            <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--border); color: var(--text-secondary); font-size: 0.9em; line-height: 1.6;">
                 <p style="margin: 10px 0;"><strong>©️ Copyright Notice</strong></p>
                 <p style="margin: 5px 0;">All wallpapers above are copyrighted by Chen Cong, designer of "PurrrrrFocus". Commercial use is prohibited without authorization.</p>
             </div>
+            <p>&copy; 2025 PurrrrrFocus. All rights reserved.</p>
+            <p>Make focus a habit 🐱</p>
         </div>
     </div>
     
@@ -528,3 +562,4 @@
     </script>
 </body>
 </html>
+

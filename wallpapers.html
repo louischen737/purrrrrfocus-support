@@ -75,6 +75,29 @@
             margin-bottom: 20px;
         }
         
+        .app-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .app-icon img {
+            width: 100px;
+            height: 100px;
+            border-radius: 22px;
+            box-shadow: 0 8px 20px var(--shadow);
+            transition: all 0.3s ease;
+        }
+        
+        .app-icon img:hover {
+            transform: scale(1.08) rotate(2deg);
+            box-shadow: 0 12px 28px var(--shadow-hover);
+        }
+        
         .back-link {
             display: inline-block;
             margin-bottom: 20px;
@@ -345,7 +368,7 @@
         }
         
         /* 响应式设计 */
-        @media (max-width: 768px) {
+            @media (max-width: 768px) {
             .container {
                 padding: 10px;
             }
@@ -356,6 +379,16 @@
             
             .header h1 {
                 font-size: 2em;
+            }
+            
+            .app-icon {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .app-icon img {
+                width: 80px;
+                height: 80px;
             }
             
             .wallpaper-grid {
@@ -381,10 +414,11 @@
 </head>
 <body>
     <div class="container">
-        <a href="index.html" class="back-link">← 返回技术支持</a>
-        
         <div class="header">
-            <h1>🎄 精美壁纸</h1>
+            <div class="app-icon">
+                <img src="AppIcon-Preview.png" alt="PurrrrrFocus">
+            </div>
+            <h1>精美壁纸</h1>
             <p>精选高质量壁纸，为您的设备增添美感</p>
         </div>
         
@@ -400,12 +434,12 @@
             
             <!-- 圣诞节主题分类 -->
             <div class="category-section">
-                <h2 class="category-title">🎄 圣诞节主题</h2>
+                <h2 class="category-title"><span style="font-size: 1.2em; margin-right: 8px;">🎄</span>圣诞节主题</h2>
                 <div class="wallpaper-grid">
                     <!-- 壁纸项可以在这里添加 -->
-                    <!-- 示例格式：
+                    <!-- 示例格式（直接使用完整壁纸，无需缩略图）：
                     <div class="wallpaper-item" data-full="wallpapers/christmas/christmas_001.jpg">
-                        <img src="wallpapers/christmas/christmas_001_thumb.jpg" alt="圣诞节壁纸 1" loading="lazy">
+                        <img src="wallpapers/christmas/christmas_001.jpg" alt="圣诞节壁纸 1" loading="lazy">
                         <button class="download-btn" onclick="downloadWallpaper(event, 'wallpapers/christmas/christmas_001.jpg', '圣诞节壁纸_1')">下载</button>
                         <div class="wallpaper-overlay">
                             <div class="wallpaper-name">壁纸名称</div>
@@ -418,12 +452,12 @@
         </div>
         
         <div class="footer">
+            <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--border); color: var(--text-secondary); font-size: 0.9em; line-height: 1.6;">
+                <p style="margin: 10px 0;"><strong>©️ 版权声明</strong></p>
+                <p style="margin: 5px 0;">以上壁纸版权归「喵时计」设计师陈聪所有，未经授权，禁止商用。</p>
+            </div>
             <p>&copy; 2025 PurrrrrFocus. All rights reserved.</p>
             <p>让专注成为一种习惯 🐱</p>
-            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--text-secondary); font-size: 0.9em; line-height: 1.6;">
-                <p style="margin: 10px 0;"><strong>©️ 版权声明</strong></p>
-                <p style="margin: 5px 0;">以上壁纸版权归「喵时计」（或PurrrrrFocus）设计师陈聪所有，未经授权，禁止商用。</p>
-            </div>
         </div>
     </div>
     
@@ -528,3 +562,4 @@
     </script>
 </body>
 </html>
+
