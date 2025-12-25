@@ -563,6 +563,29 @@
             text-decoration: underline;
         }
         
+        .product-hunt-badge {
+            margin-top: 15px;
+            text-align: center;
+        }
+        
+        .product-hunt-badge a {
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .product-hunt-badge img {
+            border-radius: 8px;
+            box-shadow: 0 4px 12px var(--shadow);
+            transition: all 0.3s ease;
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .product-hunt-badge a:hover img {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 20px var(--shadow-hover);
+        }
+        
         @media (max-width: 600px) {
             .container {
                 padding: 10px;
@@ -735,14 +758,14 @@
                 <h2>💰 Plus Pricing</h2>
                 <div class="pricing-item">
                     <div>
-                        <span class="pricing-name">Monthly Subscription</span>
+                    <span class="pricing-name">Monthly Subscription</span>
                         <div style="font-size: 0.85em; color: var(--text-secondary); margin-top: 4px;">Free for first 3 days, then ¥8/month. Cancel anytime during trial</div>
                     </div>
                     <span class="pricing-price">¥8/month</span>
                 </div>
                 <div class="pricing-item">
                     <div>
-                        <span class="pricing-name">Yearly Subscription</span>
+                    <span class="pricing-name">Yearly Subscription</span>
                         <div style="font-size: 0.85em; color: var(--text-secondary); margin-top: 4px;">Free for first 7 days, then ¥48/year. Cancel anytime during trial</div>
                     </div>
                     <span class="pricing-price">¥48/year</span>
@@ -816,7 +839,13 @@
                     <a href="https://y24nq6bqd7.feishu.cn/docx/HutadQZMIoNI5yxntRscIFNHndc" target="_blank">Terms of Service</a><br><br>
                     <strong>中文版本：</strong><br>
                     <a href="https://y24nq6bqd7.feishu.cn/docx/JeIGdPW35oZ0rGx2nSDc0j2Mnag" target="_blank">隐私政策</a> | 
-                    <a href="https://y24nq6bqd7.feishu.cn/docx/BQbbdoaiRoazaMxZpqKcsspYnBc" target="_blank">使用条款</a>
+                    <a href="https://y24nq6bqd7.feishu.cn/docx/BQbbdoaiRoazaMxZpqKcsspYnBc" target="_blank">使用条款</a><br><br>
+                    <strong>Product Hunt:</strong><br>
+                    <div class="product-hunt-badge">
+                        <a href="https://www.producthunt.com/products/purrrrrfocus-pomodoro?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-purrrrrfocus-pomodoro" target="_blank" rel="noopener noreferrer">
+                            <img alt="PurrrrrFocus Pomodoro  - Turn focus into a delightful journey with cute cat companion | Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1054013&amp;theme=light&amp;t=1766634809819">
+                        </a>
+                    </div>
                 </div>
             </div>
             
