@@ -7,9 +7,12 @@
     
     <!-- 基础 SEO Meta 标签 -->
     <meta name="description" content="PurrrrrFocus – Pomodoro timer｜Cat companionship｜Productivity app. Focus enhancement partner combining Chinese aesthetics with adorable cats. Simple & user friendly Pomodoro timer, count-up timer, and deep focus mode. Stay focused with your cute cat companion, build study and habit tracking, enter flow state. Perfect for ADHD support and productivity enhancement.">
-    <meta name="keywords" content="PurrrrrFocus,Pomodoro timer,count-up timer,timer clock,stay focused,deep focus,productivity,ADHD,study tracker,habit tracker,cat companion,kitty companion,cat focus,cat purring,simple & user friendly,cute,pet companion,cat avatars,flow,focus app,iOS app,productivity tool">
+    <meta name="keywords" content="PurrrrrFocus,Pomodoro timer,count-up timer,timer clock,stay focused,deep focus,productivity,ADHD,study tracker,habit tracker,cat companion,kitty companion,cat focus,cat purring,simple & user friendly,cute,pet companion,cat avatars,flow,focus app,iOS app,productivity tool,time management app,focus timer app,study timer,work timer,concentration app,productivity app iOS,focus helper,ADHD timer app">
     <meta name="author" content="PurrrrrFocus Team">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    <meta name="theme-color" content="#F9F3E6">
     
     <!-- 规范链接和多语言 -->
     <link rel="canonical" href="https://louischen737.github.io/purrrrrfocus-support/homepage-en.html">
@@ -61,11 +64,41 @@
       "description": "Focus better with PurrrrrFocus! Simple & user friendly focus timer app combining Chinese aesthetics with adorable cats. Features Pomodoro timer, count-up timer, deep focus mode, cat companion system, achievements, and 6 classical themes. Stay focused with your cute pet companion, build study and habit tracking, enter flow state. Perfect for ADHD support and productivity enhancement.",
       "slogan": "Focus enhancement partner",
       "url": "https://apps.apple.com/app/purrrrrfocus/id6753966008",
+      "downloadUrl": "https://apps.apple.com/app/purrrrrfocus/id6753966008",
+      "screenshot": "https://louischen737.github.io/purrrrrfocus-support/screenshots/iphone/en/01-main.png",
+      "applicationSubCategory": "Time Management",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "ratingCount": "1"
+      },
       "author": {
         "@type": "Organization",
-        "name": "PurrrrrFocus Team"
+        "name": "PurrrrrFocus Team",
+        "url": "https://louischen737.github.io/purrrrrfocus-support"
       },
-      "keywords": "Pomodoro timer,count-up timer,timer clock,stay focused,deep focus,productivity,ADHD,study tracker,habit tracker,cat companion,kitty companion,cat focus,cat purring,simple & user friendly,cute,pet companion,cat avatars,flow"
+      "keywords": "Pomodoro timer,count-up timer,timer clock,stay focused,deep focus,productivity,ADHD,study tracker,habit tracker,cat companion,kitty companion,cat focus,cat purring,simple & user friendly,cute,pet companion,cat avatars,flow",
+      "featureList": [
+        "Pomodoro Timer",
+        "Count-Up Timer",
+        "Elite Focus Mode",
+        "Cat Companion System",
+        "Statistics & Analytics",
+        "Beautiful Themes"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "PurrrrrFocus - Focus Enhancement Partner",
+      "url": "https://louischen737.github.io/purrrrrfocus-support/homepage-en.html",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://louischen737.github.io/purrrrrfocus-support/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
     }
     </script>
     
@@ -404,6 +437,83 @@
             color: var(--text-secondary);
         }
         
+        .screenshots-section {
+            padding: 80px 20px;
+            background: var(--bg-card);
+        }
+        
+        .screenshots-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .screenshot-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px var(--shadow);
+            transition: all 0.3s ease;
+            background: var(--bg-primary);
+            padding: 10px;
+        }
+        
+        .screenshot-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 16px 40px var(--shadow-hover);
+        }
+        
+        .screenshot-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+        }
+        
+        .testimonials-section {
+            padding: 80px 20px;
+            background: var(--bg-primary);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .testimonial-card {
+            padding: 30px;
+            background: var(--bg-card);
+            border-radius: 20px;
+            border: 2px solid var(--border);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 8px 24px var(--shadow);
+        }
+        
+        .testimonial-text {
+            font-size: 1.1em;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
         .cta-section {
             padding: 80px 20px;
             background: linear-gradient(135deg, var(--accent) 0%, #9B0018 100%);
@@ -490,6 +600,15 @@
             .product-hunt-badge img {
                 height: 50px;
             }
+            
+            .screenshots-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -557,6 +676,36 @@
                     <span class="feature-icon">🎨</span>
                     <h3>Beautiful Themes</h3>
                     <p>6 classical themes available, including Classical Courtyard, Celadon Glow, Lake Moon, and more to create your exclusive focus space</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Screenshots Section -->
+    <section class="screenshots-section">
+        <div class="container">
+            <h2 class="section-title">App Preview</h2>
+            <p class="section-subtitle">Clean & elegant interface design that makes focus a pleasure</p>
+            <div class="screenshots-container">
+                <div class="screenshots-grid">
+                    <div class="screenshot-item">
+                        <img src="screenshots/iphone/en/01-main.png" alt="PurrrrrFocus Main Interface">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="screenshots/iphone/en/02-timer.png" alt="Focus Timer">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="screenshots/iphone/en/03-statistics.png" alt="Statistics">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="screenshots/iphone/en/04-achievements.png" alt="Achievements">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="screenshots/iphone/en/05-themes.png" alt="Theme Selection">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="screenshots/iphone/en/06-cat-companion.png" alt="Cat Companion">
+                    </div>
                 </div>
             </div>
         </div>

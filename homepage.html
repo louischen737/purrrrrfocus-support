@@ -7,9 +7,12 @@
     
     <!-- 基础 SEO Meta 标签 -->
     <meta name="description" content="喵时计-番茄钟自律专注计时器｜猫咪陪伴｜效率提升APP。专注力提升伙伴，极简治愈的专注计时应用，支持番茄工作法、正计时模式、学霸模式。萌系猫咪伙伴陪伴，培养专注学习、专注工作的好习惯，进入高效心流状态。学霸必备的时间管理工具。">
-    <meta name="keywords" content="喵时计,PurrrrrFocus,番茄钟,专注计时器,专注学习,专注力,专注时刻,专注工作,自律,极简,治愈,萌系,学霸必备,正计时,效率,高效,心流,番茄工作法,时间管理,好习惯,可爱,猫咪,宠物,伙伴,专注应用,iOS应用,生产力工具">
+    <meta name="keywords" content="喵时计,PurrrrrFocus,番茄钟,专注计时器,专注学习,专注力,专注时刻,专注工作,自律,极简,治愈,萌系,学霸必备,正计时,效率,高效,心流,番茄工作法,时间管理,好习惯,可爱,猫咪,宠物,伙伴,专注应用,iOS应用,生产力工具,番茄工作法应用,专注力训练,时间管理工具,学习助手,工作助手,效率工具,ADHD辅助工具">
     <meta name="author" content="PurrrrrFocus Team">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    <meta name="theme-color" content="#F9F3E6">
     
     <!-- 规范链接和多语言 -->
     <link rel="canonical" href="https://louischen737.github.io/purrrrrfocus-support/homepage.html">
@@ -61,11 +64,41 @@
       "description": "专注力提升，从喵时计开始！极简治愈的专注计时应用，融合中式美学与可爱猫咪元素。支持番茄工作法、正计时模式、学霸模式，萌系猫咪伙伴陪伴，培养专注学习、专注工作的好习惯，进入高效心流状态。学霸必备的时间管理工具。",
       "slogan": "专注力提升伙伴",
       "url": "https://apps.apple.com/app/purrrrrfocus/id6753966008",
+      "downloadUrl": "https://apps.apple.com/app/purrrrrfocus/id6753966008",
+      "screenshot": "https://louischen737.github.io/purrrrrfocus-support/screenshots/iphone/zh/01-main.png",
+      "applicationSubCategory": "Time Management",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "ratingCount": "1"
+      },
       "author": {
         "@type": "Organization",
-        "name": "PurrrrrFocus Team"
+        "name": "PurrrrrFocus Team",
+        "url": "https://louischen737.github.io/purrrrrfocus-support"
       },
-      "keywords": "番茄钟,专注计时器,专注学习,专注力,专注时刻,专注工作,自律,极简,治愈,萌系,学霸必备,正计时,效率,高效,心流,番茄工作法,时间管理,好习惯,可爱,猫咪,宠物,伙伴"
+      "keywords": "番茄钟,专注计时器,专注学习,专注力,专注时刻,专注工作,自律,极简,治愈,萌系,学霸必备,正计时,效率,高效,心流,番茄工作法,时间管理,好习惯,可爱,猫咪,宠物,伙伴",
+      "featureList": [
+        "番茄工作法",
+        "正计时模式",
+        "学霸模式",
+        "猫咪伙伴系统",
+        "数据统计分析",
+        "精美主题选择"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "PurrrrrFocus - 喵时计",
+      "url": "https://louischen737.github.io/purrrrrfocus-support/homepage.html",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://louischen737.github.io/purrrrrfocus-support/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
     }
     </script>
     
@@ -404,6 +437,83 @@
             color: var(--text-secondary);
         }
         
+        .screenshots-section {
+            padding: 80px 20px;
+            background: var(--bg-card);
+        }
+        
+        .screenshots-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .screenshot-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px var(--shadow);
+            transition: all 0.3s ease;
+            background: var(--bg-primary);
+            padding: 10px;
+        }
+        
+        .screenshot-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 16px 40px var(--shadow-hover);
+        }
+        
+        .screenshot-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+        }
+        
+        .testimonials-section {
+            padding: 80px 20px;
+            background: var(--bg-primary);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .testimonial-card {
+            padding: 30px;
+            background: var(--bg-card);
+            border-radius: 20px;
+            border: 2px solid var(--border);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 8px 24px var(--shadow);
+        }
+        
+        .testimonial-text {
+            font-size: 1.1em;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
         .cta-section {
             padding: 80px 20px;
             background: linear-gradient(135deg, var(--accent) 0%, #9B0018 100%);
@@ -490,6 +600,15 @@
             .product-hunt-badge img {
                 height: 50px;
             }
+            
+            .screenshots-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -557,6 +676,36 @@
                     <span class="feature-icon">🎨</span>
                     <h3>精美主题</h3>
                     <p>6种古典主题可选，包括古典庭院、青瓷浮光、湖月寒烟等，打造专属专注空间</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Screenshots Section -->
+    <section class="screenshots-section">
+        <div class="container">
+            <h2 class="section-title">应用预览</h2>
+            <p class="section-subtitle">极简优雅的界面设计，让专注成为一种享受</p>
+            <div class="screenshots-container">
+                <div class="screenshots-grid">
+                    <div class="screenshot-item">
+                        <img src="screenshots/iphone/zh/01-main.png" alt="喵时计主界面">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="screenshots/iphone/zh/02-timer.png" alt="专注计时">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="screenshots/iphone/zh/03-statistics.png" alt="数据统计">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="screenshots/iphone/zh/04-achievements.png" alt="成就系统">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="screenshots/iphone/zh/05-themes.png" alt="主题选择">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="screenshots/iphone/zh/06-cat-companion.png" alt="猫咪伙伴">
+                    </div>
                 </div>
             </div>
         </div>
