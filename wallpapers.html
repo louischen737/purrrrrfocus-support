@@ -577,13 +577,20 @@
             });
         });
         
+        // 从URL中提取文件扩展名
+        function getFileExtension(url) {
+            const match = url.match(/\.(jpg|jpeg|png|gif|webp)$/i);
+            return match ? match[1].toLowerCase() : 'jpg';
+        }
+        
         // 下载壁纸
         function downloadWallpaper(event, imageUrl, imageName) {
             event.stopPropagation(); // 阻止事件冒泡
             
+            const extension = getFileExtension(imageUrl);
             const link = document.createElement('a');
             link.href = imageUrl;
-            link.download = imageName + '.png';
+            link.download = imageName + '.' + extension;
             link.target = '_blank';
             document.body.appendChild(link);
             link.click();
@@ -593,9 +600,10 @@
         // 从模态框下载
         function downloadFromModal() {
             if (currentImageUrl) {
+                const extension = getFileExtension(currentImageUrl);
                 const link = document.createElement('a');
                 link.href = currentImageUrl;
-                link.download = currentImageName + '.png';
+                link.download = currentImageName + '.' + extension;
                 link.target = '_blank';
                 document.body.appendChild(link);
                 link.click();

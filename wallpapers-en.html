@@ -577,13 +577,20 @@
             });
         });
         
+        // Extract file extension from URL
+        function getFileExtension(url) {
+            const match = url.match(/\.(jpg|jpeg|png|gif|webp)$/i);
+            return match ? match[1].toLowerCase() : 'jpg';
+        }
+        
         // Download wallpaper
         function downloadWallpaper(event, imageUrl, imageName) {
             event.stopPropagation(); // Prevent event bubbling
             
+            const extension = getFileExtension(imageUrl);
             const link = document.createElement('a');
             link.href = imageUrl;
-            link.download = imageName + '.png';
+            link.download = imageName + '.' + extension;
             link.target = '_blank';
             document.body.appendChild(link);
             link.click();
@@ -593,9 +600,10 @@
         // Download from modal
         function downloadFromModal() {
             if (currentImageUrl) {
+                const extension = getFileExtension(currentImageUrl);
                 const link = document.createElement('a');
                 link.href = currentImageUrl;
-                link.download = currentImageName + '.png';
+                link.download = currentImageName + '.' + extension;
                 link.target = '_blank';
                 document.body.appendChild(link);
                 link.click();
